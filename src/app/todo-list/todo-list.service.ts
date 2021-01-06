@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
+import { Todo } from './todo.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoListService {
-  list : string[] = [];
+  private list : Todo[] =[];
 
   constructor() { }
 
-  addTodo(todo : string):void{
-    this.list.push(todo);
+  addTodo(title : string):void{
+    this.list.push(new Todo(title));
   }
 
-  getTodo():string[]{
+  getTodo():Todo[]{
     return this.list;
   }
 }
