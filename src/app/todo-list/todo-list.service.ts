@@ -16,4 +16,8 @@ export class TodoListService {
   getTodo():Todo[]{
     return this.list;
   }
+
+  remove(index : number): void{
+    this.list.splice(index,1);
+  }
 }

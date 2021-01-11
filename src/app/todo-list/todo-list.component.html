@@ -7,12 +7,12 @@
 
     <section class="main">
         <ul class="todo-list">
-            <li *ngFor="let todo of getTodo()"  [class.completed]="todo.done" >
+            <li *ngFor="let todo of getTodo(); let i=index "  [class.completed]="todo.done" >
                 <div class="view">                    
                     <input  class="toggle" type="checkbox"
                      (click)="todo.toggleCompletion()"  [checked]="todo.done" >
                      <label>{{todo.getTitle()}}</label>
-                    <button class="destroy"></button>
+                    <button class="destroy" (click)="remove(i)" ></button>
                 </div>
             </li>
         </ul>
